@@ -26,10 +26,12 @@
 #
 
 on init
+    start boot-hal-1-0
     # Mount binderfs
     mkdir /dev/binderfs
     mount binder binder /dev/binderfs stats=global
     chmod 0755 /dev/binderfs
+    
 
     symlink /dev/binderfs/binder /dev/binder
     symlink /dev/binderfs/hwbinder /dev/hwbinder
